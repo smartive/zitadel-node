@@ -1,0 +1,12 @@
+{
+  "name": "node",
+  "private": true,
+  "scripts": {
+    "start": "npm run pat:commonjs && npm run pat:esm",
+    "pat:commonjs": "node access-api-with-pat.commonjs.js",
+    "pat:esm": "node access-api-with-pat.esm.mjs"
+  },
+  "dependencies": {
+    "@zitadel/node": "file:.."
+  }
+}
