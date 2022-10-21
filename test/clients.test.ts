@@ -1,41 +1,36 @@
+import test from 'ava';
 import { createAdminClient, createAuthClient, createManagementClient } from '../src/grpc/clients';
 import { apiEndpoint } from './test-data';
 
-describe('auth client', () => {
-  test('create client', () => {
-    const client = createAuthClient(apiEndpoint);
-    expect(client).toBeDefined();
-  });
-
-  test('call healthz endpoint', async () => {
-    const client = createAuthClient(apiEndpoint);
-    const response = await client.healthz({});
-    expect(response).toEqual({});
-  });
+test('auth client - create client', (t) => {
+  const client = createAuthClient(apiEndpoint);
+  t.truthy(client);
 });
 
-describe('admin client', () => {
-  test('create client', () => {
-    const client = createAdminClient(apiEndpoint);
-    expect(client).toBeDefined();
-  });
-
-  test('call healthz endpoint', async () => {
-    const client = createAdminClient(apiEndpoint);
-    const response = await client.healthz({});
-    expect(response).toEqual({});
-  });
+test('auth client - call healthz endpoint', async (t) => {
+  const client = createAuthClient(apiEndpoint);
+  const response = await client.healthz({});
+  t.deepEqual(response, {});
 });
 
-describe('management client', () => {
-  test('create client', () => {
-    const client = createManagementClient(apiEndpoint);
-    expect(client).toBeDefined();
-  });
+test('admin client - create client', (t) => {
+  const client = createAdminClient(apiEndpoint);
+  t.truthy(client);
+});
 
-  test('call healthz endpoint', async () => {
-    const client = createManagementClient(apiEndpoint);
-    const response = await client.healthz({});
-    expect(response).toEqual({});
-  });
+test('admin client - call healthz endpoint', async (t) => {
+  const client = createAdminClient(apiEndpoint);
+  const response = await client.healthz({});
+  t.deepEqual(response, {});
+});
+
+test('management client - create client', (t) => {
+  const client = createManagementClient(apiEndpoint);
+  t.truthy(client);
+});
+
+test('management client - call healthz endpoint', async (t) => {
+  const client = createManagementClient(apiEndpoint);
+  const response = await client.healthz({});
+  t.deepEqual(response, {});
 });
