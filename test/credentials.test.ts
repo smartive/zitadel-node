@@ -1,55 +1,52 @@
+import test from 'ava';
 import { Application } from '../src/credentials/application';
 import { ServiceAccount } from '../src/credentials/service-account';
 import { apiEndpoint, applicationJson, serviceAccountJson } from './test-data';
 
-describe('application', () => {
-  test('load from JSON', () => {
-    const app = Application.fromJson(applicationJson);
-    expect(app.appId).toBe('183300856840454401');
-  });
-
-  test('load from JSON string', () => {
-    const app = Application.fromJsonString(JSON.stringify(applicationJson));
-    expect(app.appId).toBe('183300856840454401');
-  });
-
-  test('throw on emtpy JSON', () => {
-    expect(() => Application.fromJson({} as any)).toThrowError();
-  });
-
-  test('throw on incomplete application JSON', () => {
-    expect(() => Application.fromJson({ ...applicationJson, appId: '' })).toThrowError();
-  });
-
-  test('create a signed JWT', async () => {
-    const app = Application.fromJson(applicationJson);
-    const jwt = await app.getSignedJwt('https://api.zitadel.ch');
-    expect(jwt).toMatch(/^ey.*/);
-  });
+test('application - load from JSON', (t) => {
+  const app = Application.fromJson(applicationJson);
+  t.is(app.appId, '183300856840454401');
 });
 
-describe('service account', () => {
-  test('load from JSON', () => {
-    const sa = ServiceAccount.fromJson(serviceAccountJson);
-    expect(sa.userId).toBe('183285169220747521');
-  });
+test('application - load from JSON string', (t) => {
+  const app = Application.fromJsonString(JSON.stringify(applicationJson));
+  t.is(app.appId, '183300856840454401');
+});
 
-  test('load from JSON string', () => {
-    const sa = ServiceAccount.fromJsonString(JSON.stringify(serviceAccountJson));
-    expect(sa.userId).toBe('183285169220747521');
-  });
+test('application - throw on emtpy JSON', (t) => {
+  t.throws(() => Application.fromJson({} as any));
+});
 
-  test('throw on emtpy JSON', () => {
-    expect(() => ServiceAccount.fromJson({} as any)).toThrowError();
-  });
+test('application - throw on incomplete application JSON', (t) => {
+  t.throws(() => Application.fromJson({ ...applicationJson, appId: '' }));
+});
 
-  test('throw on incomplete ServiceAccount JSON', () => {
-    expect(() => ServiceAccount.fromJson({ ...serviceAccountJson, userId: '' })).toThrowError();
-  });
+test('application - create a signed JWT', async (t) => {
+  const app = Application.fromJson(applicationJson);
+  const jwt = await app.getSignedJwt('https://api.zitadel.ch');
+  t.regex(jwt, /^ey.*/);
+});
 
-  test('successfully log in against ZITADEL', async () => {
-    const sa = ServiceAccount.fromJson(serviceAccountJson);
-    const token = await sa.authenticate(apiEndpoint);
-    expect(token).toBeDefined();
-  });
+test('service account - load from JSON', (t) => {
+  const sa = ServiceAccount.fromJson(serviceAccountJson);
+  t.is(sa.userId, '183285169220747521');
+});
+
+test('service account - load from JSON string', (t) => {
+  const sa = ServiceAccount.fromJsonString(JSON.stringify(serviceAccountJson));
+  t.is(sa.userId, '183285169220747521');
+});
+
+test('service account - throw on emtpy JSON', (t) => {
+  t.throws(() => ServiceAccount.fromJson({} as any));
+});
+
+test('service account - throw on incomplete ServiceAccount JSON', (t) => {
+  t.throws(() => ServiceAccount.fromJson({ ...serviceAccountJson, userId: '' }));
+});
+
+test('service account - successfully log in against ZITADEL', async (t) => {
+  const sa = ServiceAccount.fromJson(serviceAccountJson);
+  const token = await sa.authenticate(apiEndpoint);
+  t.truthy(token);
 });
