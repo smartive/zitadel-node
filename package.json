@@ -5,11 +5,6 @@
   "type": "commonjs",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "exports": {
-    ".": "./dist/index.js",
-    "./credentials": "./dist/credentials/index.js",
-    "./grpc": "./dist/grpc/index.js"
-  },
   "publishConfig": {
     "access": "public"
   },
