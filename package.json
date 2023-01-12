@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "@types/node-rsa": "1.1.1",
-    "ava": "4.3.3",
+    "ava": "5.1.0",
     "grpc-tools": "1.12.3",
     "make-dir-cli": "3.0.0",
     "rimraf": "3.0.2",
