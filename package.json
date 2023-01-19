@@ -47,7 +47,7 @@
     "axios": "1.2.3",
     "jose": "4.11.2",
     "long": "5.2.0",
-    "nice-grpc": "2.0.1",
+    "nice-grpc": "2.1.0",
     "node-rsa": "1.1.1",
     "openid-client": "5.3.1",
     "protobufjs": "7.1.2"
