@@ -9,7 +9,7 @@ Also it contains helpers to create the service clients to access the API.
 With two `MetadataProvider` (`accessTokenProvider` and `serviceAccountProvider`),
 the clients can be created with the correct authentication already in place.
 
-Head over to [the examples](https://github.com/smartive/zitadel-js/tree/main/examples) to see implementation
+Head over to [the examples](https://github.com/smartive/zitadel-node/tree/main/examples) to see implementation
 examples.
 
 This library allows you to use the ZITADEL API in Node.js, it is not
