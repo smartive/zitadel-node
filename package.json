@@ -35,21 +35,21 @@
   "devDependencies": {
     "@types/node-rsa": "1.1.1",
     "ava": "4.3.3",
-    "grpc-tools": "1.12.3",
+    "grpc-tools": "1.12.4",
     "make-dir-cli": "3.0.0",
-    "rimraf": "3.0.2",
+    "rimraf": "4.1.2",
     "ts-node": "10.9.1",
-    "ts-proto": "1.136.1",
+    "ts-proto": "1.139.0",
     "tsc-silent": "1.2.2",
-    "typescript": "4.9.4"
+    "typescript": "4.9.5"
   },
   "dependencies": {
-    "axios": "1.2.1",
-    "jose": "4.11.1",
+    "axios": "1.3.2",
+    "jose": "4.11.2",
     "long": "5.2.0",
-    "nice-grpc": "2.0.1",
+    "nice-grpc": "2.1.0",
     "node-rsa": "1.1.1",
-    "openid-client": "5.3.1",
-    "protobufjs": "7.1.2"
+    "openid-client": "5.3.4",
+    "protobufjs": "7.2.1"
   }
 }
