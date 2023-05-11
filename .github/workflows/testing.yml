@@ -4,6 +4,10 @@ on:
     branches:
       - '**'
 
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   test_matrix:
     strategy:
@@ -12,12 +16,11 @@ jobs:
         version:
           - 16
           - 18
+          - 20
     name: test and build package (node ${{ matrix.version }})
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true
       - uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.version }}
