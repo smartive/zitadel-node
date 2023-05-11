@@ -12,9 +12,9 @@
     "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "build:tsc": "tsc-silent --suppressConfig tsc-silent.config.cjs -p tsconfig.build.json",
+    "build:tsc": "tsc -p tsconfig.build.json",
     "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
-    "build:grpc": "grpc_tools_node_protoc --ts_proto_out=src/grpc/generated --ts_proto_opt=oneof=unions,forceLong=long,esModuleInterop=true,env=node,outputServices=nice-grpc,outputServices=generic-definitions,useExactTypes=false --proto_path=external/zitadel/proto --proto_path=external/protoc-gen-validate --proto_path=external/grpc-gateway --proto_path=external/googleapis external/zitadel/proto/zitadel/*.proto",
+    "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
     "test": "ava"
   },
   "keywords": [
@@ -33,6 +33,7 @@
     "dist"
   ],
   "devDependencies": {
+    "@bufbuild/buf": "^1.18.0-1",
     "@types/node-rsa": "1.1.1",
     "ava": "4.3.3",
     "grpc-tools": "1.12.4",
