@@ -40,7 +40,7 @@
     "make-dir-cli": "3.0.0",
     "rimraf": "5.0.1",
     "ts-node": "10.9.1",
-    "ts-proto": "1.148.0",
+    "ts-proto": "1.148.1",
     "tsc-silent": "1.2.2",
     "typescript": "5.0.4"
   },
