@@ -34,7 +34,7 @@
   ],
   "devDependencies": {
     "@bufbuild/buf": "^1.18.0-1",
-    "@types/node-rsa": "1.1.1",
+    "@types/node-rsa": "1.1.2",
     "ava": "4.3.3",
     "grpc-tools": "1.12.4",
     "make-dir-cli": "3.1.0",
