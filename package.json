@@ -38,7 +38,7 @@
     "ava": "4.3.3",
     "grpc-tools": "1.12.4",
     "make-dir-cli": "3.1.0",
-    "rimraf": "5.0.2",
+    "rimraf": "5.0.4",
     "ts-node": "10.9.1",
     "ts-proto": "1.151.1",
     "tsc-silent": "1.2.2",
