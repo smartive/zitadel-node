@@ -6,22 +6,10 @@
   "publishConfig": {
     "access": "public"
   },
-  "exports": {
-    "./package.json": "./package.json",
-    "./credentials": {
-      "import": "./dist/credentials/index.js",
-      "types": "./dist/credentials/index.d.ts"
-    },
-    "./grpc": {
-      "import": "./dist/grpc/index.js",
-      "types": "./dist/grpc/index.d.ts"
-    }
-  },
   "scripts": {
     "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "yyybuild:tsc": "tsc",
     "build:tsc": "tshy",
     "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
     "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
@@ -64,5 +52,13 @@
     "node-rsa": "1.1.1",
     "openid-client": "5.6.4",
     "protobufjs": "7.2.6"
+  },
+  "tshy": {
+    "selfLink": false,
+    "exports": {
+      "./package.json": "./package.json",
+      "./credentials": "./src/credentials/index.ts",
+      "./grpc": "./src/grpc/index.ts"
+    }
   }
 }
