@@ -6,11 +6,23 @@
   "publishConfig": {
     "access": "public"
   },
+  "exports": {
+    "./package.json": "./package.json",
+    "./credentials": {
+      "import": "./dist/credentials/index.js",
+      "types": "./dist/credentials/index.d.ts"
+    },
+    "./grpc": {
+      "import": "./dist/grpc/index.js",
+      "types": "./dist/grpc/index.d.ts"
+    }
+  },
   "scripts": {
     "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "build:tsc": "tsc",
+    "yyybuild:tsc": "tsc",
+    "build:tsc": "tshy",
     "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
     "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
     "test": "ava"
@@ -41,6 +53,7 @@
     "rimraf": "5.0.5",
     "ts-proto": "1.151.1",
     "tsc-silent": "1.2.2",
+    "tshy": "^1.11.0",
     "typescript": "5.3.3"
   },
   "dependencies": {
