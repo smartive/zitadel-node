@@ -9,7 +9,7 @@ import {
   createSettingsClient,
   createSystemClient,
   createUserClient,
-} from '../src/grpc/clients';
+} from '../src/grpc/clients.js';
 import { apiEndpoint } from './test-data';
 
 test('auth client - create client', (t) => {

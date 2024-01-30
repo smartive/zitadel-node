@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   // files: ['test/**/*.test.ts'],
   verbose: true,
   // require: ['ts-node/register'],

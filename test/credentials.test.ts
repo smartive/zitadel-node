@@ -1,7 +1,7 @@
 import test from 'ava';
-import { Application } from '../src/credentials/application';
-import { ServiceAccount } from '../src/credentials/service-account';
-import { apiEndpoint, applicationJson, serviceAccountJson } from './test-data';
+import { Application } from '../src/credentials/application.js';
+import { ServiceAccount } from '../src/credentials/service-account.js';
+import { apiEndpoint, applicationJson, serviceAccountJson } from './test-data.js';
 
 test('application - load from JSON', (t) => {
   const app = Application.fromJson(applicationJson);

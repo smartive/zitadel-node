@@ -3,7 +3,7 @@ import { CallOptions, Metadata } from 'nice-grpc';
 import { ServiceAccount } from '../src/credentials/service-account.js';
 import { createAuthClient } from '../src/grpc/clients.js';
 import { createAccessTokenInterceptor, createServiceAccountInterceptor } from '../src/grpc/interceptors.js';
-import { apiEndpoint, personalAccessToken, serviceAccountJson } from './test-data';
+import { apiEndpoint, personalAccessToken, serviceAccountJson } from './test-data.js';
 
 test('access token interceptor - create interceptor', (t) => {
   const interceptor = createAccessTokenInterceptor('asdf');
