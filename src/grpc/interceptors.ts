@@ -1,6 +1,6 @@
 import { CallOptions, ClientMiddleware, ClientMiddlewareCall } from 'nice-grpc';
 import { Metadata } from 'nice-grpc-common';
-import { AuthenticationOptions, ServiceAccount } from '../credentials/service-account';
+import { AuthenticationOptions, ServiceAccount } from '../credentials/service-account.js';
 
 /**
  * Create a simple gRPC `Interceptor` that attaches a given access token to any request

@@ -1,2 +1,2 @@
-export { Application } from './application';
-export { ServiceAccount } from './service-account';
+export { Application } from './application.js';
+export { ServiceAccount } from './service-account.js';

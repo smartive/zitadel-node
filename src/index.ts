@@ -1,2 +1,2 @@
-export * as credentials from './credentials';
-export * as grpc from './grpc';
+export * as credentials from './credentials/index.js';
+export * as grpc from './grpc/index.js';
