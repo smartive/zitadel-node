@@ -14,7 +14,6 @@ jobs:
       fail-fast: true
       matrix:
         version:
-          - 16
           - 18
           - 20
     name: test and build package (node ${{ matrix.version }})

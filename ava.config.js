@@ -1,6 +1,12 @@
 module.exports = {
-  files: ['test/**/*.test.ts'],
+  // files: ['test/**/*.test.ts'],
   verbose: true,
-  extensions: ['ts'],
-  require: ['ts-node/register'],
+  // require: ['ts-node/register'],
+  typescript: {
+    extensions: ['ts'],
+    rewritePaths: {
+      'src/': 'dist/',
+    },
+    compile: false,
+  },
 };
