@@ -2,9 +2,7 @@
   "name": "@zitadel/node",
   "version": "0.0.0-development",
   "description": "Library for API access to ZITADEL. Provides compiled gRPC service clients and helpers for applications and service accounts.",
-  "type": "commonjs",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -12,7 +10,7 @@
     "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "build:tsc": "tsc -p tsconfig.build.json",
+    "build:tsc": "tsc",
     "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
     "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
     "test": "ava"
@@ -35,6 +33,7 @@
   "devDependencies": {
     "@ava/typescript": "^4.1.0",
     "@bufbuild/buf": "^1.18.0-1",
+    "@tsconfig/node-lts": "^20.1.1",
     "@types/node-rsa": "1.1.4",
     "ava": "6.1.1",
     "grpc-tools": "1.12.4",
