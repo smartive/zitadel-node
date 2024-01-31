@@ -9,8 +9,8 @@ import {
   createSettingsClient,
   createSystemClient,
   createUserClient,
-} from '../src/grpc/clients.js';
-import { apiEndpoint } from './test-data';
+} from '../src/api/clients.js';
+import { apiEndpoint } from './test-data.js';
 
 test('auth client - create client', (t) => {
   const client = createAuthClient(apiEndpoint);

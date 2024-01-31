@@ -13,9 +13,11 @@
     "build:tsc": "tshy",
     "prebuild:test": "rimraf dist",
     "build:test": "tsc -p tsconfig.test.json",
-    "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
+    "prebuild:grpc": "rimraf src/api/generated && make-dir src/api/generated",
     "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
-    "test": "ava"
+    "test": "ava",
+    "pretest:ci": "npm run build:grpc && npm run build:test",
+    "test:ci": "npm run test"
   },
   "keywords": [
     "ZITADEL",
@@ -57,9 +59,9 @@
   "tshy": {
     "selfLink": false,
     "exports": {
-      "./package.json": "./package.json",
+      "./api": "./src/api/index.ts",
       "./credentials": "./src/credentials/index.ts",
-      "./grpc": "./src/grpc/index.ts"
+      "./package.json": "./package.json"
     }
   }
 }
