@@ -6,7 +6,7 @@ plugins:
   - name: ts
     strategy: all
     path: node_modules/ts-proto/protoc-gen-ts_proto
-    out: src/grpc/generated
+    out: src/api/generated
     opt:
       - oneOf=unions
       - forceLong=long
@@ -15,3 +15,4 @@ plugins:
       - outputServices=nice-grpc
       - outputServices=generic-definitions
       - useExactTypes=false
+      - importSuffix=.js

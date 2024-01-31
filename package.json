@@ -2,9 +2,7 @@
   "name": "@zitadel/node",
   "version": "0.0.0-development",
   "description": "Library for API access to ZITADEL. Provides compiled gRPC service clients and helpers for applications and service accounts.",
-  "type": "commonjs",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "type": "module",
   "publishConfig": {
     "access": "public"
   },
@@ -12,10 +10,14 @@
     "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "build:tsc": "tsc -p tsconfig.build.json",
-    "prebuild:grpc": "rimraf src/grpc/generated && make-dir src/grpc/generated",
+    "build:tsc": "tshy",
+    "prebuild:test": "rimraf dist",
+    "build:test": "tsc -p tsconfig.test.json",
+    "prebuild:grpc": "rimraf src/api/generated && make-dir src/api/generated",
     "build:grpc": "buf generate https://github.com/zitadel/zitadel.git --path ./proto/zitadel",
-    "test": "ava"
+    "test": "ava",
+    "pretest:ci": "npm run build:grpc && npm run build:test",
+    "test:ci": "npm run test"
   },
   "keywords": [
     "ZITADEL",
@@ -34,15 +36,16 @@
   ],
   "devDependencies": {
     "@bufbuild/buf": "^1.18.0-1",
+    "@tsconfig/node-lts": "^20.1.1",
     "@types/node-rsa": "1.1.4",
-    "ava": "4.3.3",
+    "ava": "6.1.1",
     "grpc-tools": "1.12.4",
     "make-dir-cli": "3.1.0",
     "rimraf": "5.0.5",
-    "ts-node": "10.9.2",
     "ts-proto": "1.151.1",
     "tsc-silent": "1.2.2",
-    "typescript": "5.1.6"
+    "tshy": "^1.11.0",
+    "typescript": "5.3.3"
   },
   "dependencies": {
     "axios": "1.6.7",
@@ -52,5 +55,13 @@
     "node-rsa": "1.1.1",
     "openid-client": "5.6.4",
     "protobufjs": "7.2.6"
+  },
+  "tshy": {
+    "selfLink": false,
+    "exports": {
+      "./api": "./src/api/index.ts",
+      "./credentials": "./src/credentials/index.ts",
+      "./package.json": "./package.json"
+    }
   }
 }

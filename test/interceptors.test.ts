@@ -1,9 +1,9 @@
 import test from 'ava';
 import { CallOptions, Metadata } from 'nice-grpc';
-import { ServiceAccount } from '../src/credentials/service-account';
-import { createAuthClient } from '../src/grpc/clients';
-import { createAccessTokenInterceptor, createServiceAccountInterceptor } from '../src/grpc/interceptors';
-import { apiEndpoint, personalAccessToken, serviceAccountJson } from './test-data';
+import { createAuthClient } from '../src/api/clients.js';
+import { createAccessTokenInterceptor, createServiceAccountInterceptor } from '../src/api/interceptors.js';
+import { ServiceAccount } from '../src/credentials/service-account.js';
+import { apiEndpoint, personalAccessToken, serviceAccountJson } from './test-data.js';
 
 test('access token interceptor - create interceptor', (t) => {
   const interceptor = createAccessTokenInterceptor('asdf');

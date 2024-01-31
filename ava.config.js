@@ -1,6 +1,4 @@
-module.exports = {
-  files: ['test/**/*.test.ts'],
+export default {
+  files: ['dist/test/**/*.test.js'],
   verbose: true,
-  extensions: ['ts'],
-  require: ['ts-node/register'],
 };
