@@ -1,12 +1,4 @@
 export default {
-  // files: ['test/**/*.test.ts'],
+  files: ['dist/test/**/*.test.js'],
   verbose: true,
-  // require: ['ts-node/register'],
-  typescript: {
-    extensions: ['ts'],
-    rewritePaths: {
-      'src/': 'dist/',
-    },
-    compile: false,
-  },
 };
