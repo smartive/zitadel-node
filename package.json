@@ -63,5 +63,15 @@
       "./credentials": "./src/credentials/index.ts",
       "./package.json": "./package.json"
     }
+  },
+  "typesVersions": {
+    "*": {
+      "api": [
+        "dist/commonjs/api/index.d.ts"
+      ],
+      "credentials": [
+        "dist/commonjs/credentials/index.d.ts"
+      ]
+    }
   }
 }
