@@ -48,7 +48,7 @@
     "typescript": "5.4.2"
   },
   "dependencies": {
-    "axios": "1.6.7",
+    "axios": "1.6.8",
     "jose": "5.2.3",
     "long": "5.2.3",
     "nice-grpc": "2.1.8",
