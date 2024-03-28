@@ -42,7 +42,7 @@
     "grpc-tools": "1.12.4",
     "make-dir-cli": "3.1.0",
     "rimraf": "5.0.5",
-    "ts-proto": "1.151.1",
+    "ts-proto": "1.170.0",
     "tsc-silent": "1.2.2",
     "tshy": "^1.11.0",
     "typescript": "5.4.3"
