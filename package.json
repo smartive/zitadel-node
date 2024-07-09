@@ -44,7 +44,7 @@
     "rimraf": "6.0.0",
     "ts-proto": "1.151.1",
     "tsc-silent": "1.2.2",
-    "tshy": "^2.0.0",
+    "tshy": "^3.0.0",
     "typescript": "5.5.3"
   },
   "dependencies": {
