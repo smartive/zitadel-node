@@ -45,7 +45,7 @@
     "ts-proto": "1.181.1",
     "tsc-silent": "1.2.2",
     "tshy": "^3.0.0",
-    "typescript": "5.5.3"
+    "typescript": "5.5.4"
   },
   "dependencies": {
     "axios": "1.7.2",
