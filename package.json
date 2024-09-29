@@ -54,7 +54,8 @@
     "nice-grpc": "2.1.10",
     "node-rsa": "1.1.1",
     "openid-client": "5.7.0",
-    "protobufjs": "7.4.0"
+    "protobufjs": "7.4.0",
+    "@bufbuild/protobuf": "2.1.0"
   },
   "tshy": {
     "selfLink": false,
