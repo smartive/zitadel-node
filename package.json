@@ -7,10 +7,10 @@
     "access": "public"
   },
   "scripts": {
-    "dev": "tsc-silent -p tsconfig.json --suppressConfig tsc-silent.config.cjs -w",
+    "dev": "tsc -w",
     "build": "npm run build:grpc && npm run build:tsc",
     "prebuild:tsc": "rimraf dist",
-    "build:tsc": "tshy",
+    "build:tsc": "tsc",
     "prebuild:test": "rimraf dist",
     "build:test": "tsc -p tsconfig.test.json",
     "prebuild:grpc": "rimraf src/api/generated && make-dir src/api/generated",
@@ -43,8 +43,6 @@
     "make-dir-cli": "4.0.0",
     "rimraf": "6.0.1",
     "ts-proto": "2.2.5",
-    "tsc-silent": "1.2.2",
-    "tshy": "^3.0.0",
     "typescript": "5.6.3"
   },
   "dependencies": {
@@ -55,23 +53,5 @@
     "node-rsa": "1.1.1",
     "openid-client": "5.7.0",
     "protobufjs": "7.4.0"
-  },
-  "tshy": {
-    "selfLink": false,
-    "exports": {
-      "./api": "./src/api/index.ts",
-      "./credentials": "./src/credentials/index.ts",
-      "./package.json": "./package.json"
-    }
-  },
-  "typesVersions": {
-    "*": {
-      "api": [
-        "dist/commonjs/api/index.d.ts"
-      ],
-      "credentials": [
-        "dist/commonjs/credentials/index.d.ts"
-      ]
-    }
   }
 }

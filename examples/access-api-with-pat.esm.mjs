@@ -1,4 +1,4 @@
-import { createAccessTokenInterceptor, createAuthClient } from '@zitadel/node/api';
+import { createAccessTokenInterceptor, createAuthClient } from '@zitadel/node/dist/api/index.js';
 
 const apiEndpoint = 'https://zitadel-libraries-l8boqa.zitadel.cloud';
 const personalAccessToken = 'Dp6uT84aVTqYLSMpk-H1-B3SPuqFms-Tz77cgWKlyrY3JxsZcDmb7kZoRK2ixaVNfuqmXfE';
