@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "axios": "1.7.9",
-    "jose": "5.9.6",
+    "jose": "5.10.0",
     "long": "5.3.1",
     "nice-grpc": "2.1.10",
     "node-rsa": "1.1.1",
