@@ -42,7 +42,7 @@
     "grpc-tools": "1.13.0",
     "make-dir-cli": "4.0.0",
     "rimraf": "6.0.1",
-    "ts-proto": "2.6.1",
+    "ts-proto": "2.7.0",
     "typescript": "5.8.2"
   },
   "dependencies": {
