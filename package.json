@@ -48,7 +48,7 @@
   "dependencies": {
     "axios": "1.8.4",
     "jose": "5.10.0",
-    "long": "5.3.1",
+    "long": "5.3.2",
     "nice-grpc": "2.1.12",
     "node-rsa": "1.1.1",
     "openid-client": "5.7.1",
