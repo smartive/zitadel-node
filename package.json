@@ -39,7 +39,7 @@
     "@tsconfig/node-lts": "^22.0.0",
     "@types/node-rsa": "1.1.4",
     "ava": "6.4.1",
-    "grpc-tools": "1.13.0",
+    "grpc-tools": "1.13.1",
     "make-dir-cli": "4.0.0",
     "rimraf": "6.1.2",
     "ts-proto": "2.8.3",
