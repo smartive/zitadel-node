@@ -43,7 +43,7 @@
     "make-dir-cli": "4.0.0",
     "rimraf": "6.1.2",
     "ts-proto": "2.10.1",
-    "typescript": "5.8.3"
+    "typescript": "5.9.3"
   },
   "dependencies": {
     "axios": "1.13.2",
