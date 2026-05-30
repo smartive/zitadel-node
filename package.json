@@ -52,6 +52,6 @@
     "nice-grpc": "2.1.16",
     "node-rsa": "2.0.0",
     "openid-client": "5.7.1",
-    "protobufjs": "8.4.2"
+    "protobufjs": "8.5.0"
   }
 }
