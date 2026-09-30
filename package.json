@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@bufbuild/buf": "^1.18.0-1",
-    "@tsconfig/node-lts": "^22.0.0",
+    "@tsconfig/node-lts": "^24.0.0",
     "@types/node": "22.20.4",
     "@types/node-rsa": "1.1.4",
     "ava": "8.0.1",
