@@ -183,7 +183,7 @@ export class ServiceAccount {
 
   private async getSignedJwt(audience: string): Promise<string> {
     const rsa = new NodeRSA(this.key);
-    const key = await importPKCS8(rsa.exportKey('pkcs8-private-pem'), 'RSA256');
+    const key = await importPKCS8(rsa.exportKey('pkcs8-private-pem'), 'RS256');
 
     return await new SignJWT({})
       .setProtectedHeader({ kid: this.keyId, alg: 'RS256' })
