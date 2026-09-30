@@ -34,6 +34,9 @@
   "files": [
     "dist"
   ],
+  "engines": {
+    "node": ">=20"
+  },
   "devDependencies": {
     "@bufbuild/buf": "^1.18.0-1",
     "@tsconfig/node-lts": "^22.0.0",
