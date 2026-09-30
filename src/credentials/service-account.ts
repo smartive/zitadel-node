@@ -1,6 +1,6 @@
 import { importPKCS8, SignJWT } from 'jose';
 import NodeRSA from 'node-rsa';
-import { Issuer, TokenSet } from 'openid-client';
+import { discovery, type TokenEndpointResponse } from 'openid-client';
 
 type ServiceAccountJson = {
   userId: string;
@@ -156,12 +156,12 @@ export class ServiceAccount {
   public async authenticate(audience: string, options?: AuthenticationOptions): Promise<string> {
     const { default: axios } = await import('axios');
 
-    const issuer = await Issuer.discover(audience);
-    const tokenEndpoint = issuer.metadata.token_endpoint ?? 'N/A';
+    const config = await discovery(new URL(audience), this.userId);
+    const tokenEndpoint = config.serverMetadata().token_endpoint ?? 'N/A';
 
     const jwt = await this.getSignedJwt(audience);
 
-    const response = await axios.post<TokenSet>(
+    const response = await axios.post<TokenEndpointResponse>(
       tokenEndpoint,
       new URLSearchParams({
         assertion: jwt,
