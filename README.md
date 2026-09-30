@@ -1,5 +1,10 @@
 # ZITADEL Node.js
 
+> [!WARNING]
+> **This package is no longer maintained.**
+> It has been replaced by the official ZITADEL Node.js client library.
+> Please migrate to the [official Node.js SDK](https://zitadel.com/docs/sdk-examples/client-libraries/node).
+
 This is the ZITADEL Node.js SDK.
 
 This library contains the compiled and generated [gRPC](https://grpc.io/)
